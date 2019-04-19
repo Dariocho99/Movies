@@ -1,0 +1,145 @@
+/* You can add global styles to this file, and also import other style files */
+$accent: #58595b;
+$base-bg: #f0f8ff;
+$selected-bg: #9cb148;
+$selected-text: #FFFFFF;
+
+
+@import url('//fonts.googleapis.com/icon?family=Material+Icons');
+@import '~@angular/material/theming';
+
+$mat-green: (
+  50: #F1F8E9,
+  100: #DCEDC8,
+  200: #C5E1A5,
+  300: #AED581,
+  400: #9cb148,
+    // 9CCC65
+  500: #8BC34A,
+  600: #7CB342,
+  700: #689F38,
+  800: #558B2F,
+  900: #33691E,
+  A100: #33691E,
+  A200: #B2FF59,
+  A400: #76FF03,
+  A700: #64DD17,
+  contrast: (500: white, 600: white, 700: white, 800: white, 900: white, A700: white)
+);
+$mat-blue: (
+  50: #e0ebf3,
+  100: #b3cee1,
+  200: #80adce,
+  300: #4d8cba,
+  400: #2673ab,
+  500: #3DBAFC,
+  600: #005294,
+  700: #00488a,
+  800: #3DBAFC,
+  A200: #6a9bff,
+  A400: #3778ff,
+  A700: #1e67ff,
+  contrast: (500: white, 600: white, 700: white, 800: white, 900: white, A700: white)
+);
+
+@include mat-core();
+$custom-material-theme-primary: mat-palette($mat-green);
+$custom-material-theme-accent: mat-palette($mat-blue);
+$custom-material-theme: mat-light-theme($custom-material-theme-primary, $custom-material-theme-accent);
+
+$primary-color: map_get($custom-material-theme-primary, 400);
+$secondary-color: map_get($custom-material-theme-accent, 500);
+
+@include angular-material-theme($custom-material-theme);
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: linear-gradient(to bottom right, #ddffdd 0%, #ffffff 100%);
+
+  app-movies {
+    padding-top: 15vh;
+    width: 100%;
+  }
+
+ *:focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: none;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+.light-background-color {
+    background: #FFFFFF;
+  }
+  
+  .dark-background-color {
+    background: #58595b;
+  }
+  
+  .light-blue-background-color {
+    background: #f0f8ff;
+  }
+  
+  .medium-blue-background-color {
+    background: #bccb80;
+  }
+  
+  .strong-blue-background-color {
+    background: #a9bc5c;
+  }
+  
+  .strong-blue-background-color:hover {
+    background: #9cb148;
+  }
+  
+  .text-light-blue-color {
+    color: #80dfff;
+  }
+  
+  .text-light-blue-color:hover {
+    color: #9cb148;
+  }
+  
+  .text-light-color {
+    color: #FFFFFF;
+  }
+  
+  .text-light-color:hover {
+    color: #c5c5c5;
+  }
+  
+  .text-dark-color {
+    color: #000000;
+  }
+  
+  .text-dark-color:hover {
+    color: #929292;
+  }
+  
+  .text-darkest-color {
+    color: #000000;
+  }
+  
+  .text-lightest-color {
+    color: #FFFFFF;
+  }
+  
+  ::-moz-selection {
+    color: white !important;
+    background: #a3c2c2 !important;
+  }
+  
+  ::selection {
+    color: white !important;
+    background: #a3c2c2 !important;
+  }

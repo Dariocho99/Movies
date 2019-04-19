@@ -1,0 +1,12 @@
+.contenedor{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.example-card {
+    max-width: 300px;
+    min-width: 200px;
+    padding: 30px;
+    margin: 20px
+  }
+  
