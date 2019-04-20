@@ -10,13 +10,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ServiceService} from './service.service';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     ShearchComponent,
     movies,
-    ServiceService
   ],
   imports: [
     BrowserModule,
@@ -28,9 +28,9 @@ import {ServiceService} from './service.service';
     MatInputModule,
     BrowserAnimationsModule,
     MatDialogModule, 
-    
+    HttpClientModule
   ],
-  entryComponents:[movies, ServiceService],
+  entryComponents:[movies],
   providers: [ServiceService],
   bootstrap: [AppComponent]
 })

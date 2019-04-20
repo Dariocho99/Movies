@@ -40,5 +40,12 @@ export class ServiceService {
       const id = typeof pelicula === 'string' ? pelicula : pelicula.id;
       return this.http.get<any>(this.urlApi + path + id, {headers: headers});
     }
+    
+    getMovies2(path: string){
+      return fetch(this.urlApi+'s='+ path).then(Response=>Response.json());
+    }
+    getMovies3(path: string){
+      return fetch(this.urlApi+'i='+ path).then(Response=>Response.json());
+    }
   
 }

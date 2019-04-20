@@ -11,13 +11,14 @@ import { ServiceService} from '../../service.service';
 export class ShearchComponent implements OnInit {
 
   public dataSource: any;
-  card :any = [];
+  card = [ ];
   constructor(public dialog: MatDialog, private service: ServiceService) { }
 
   ngOnInit() {
-      this.service.getMovies('any').subscribe(res => {
-        this.card = res;
-      });
+      //this.service.getMovies('any').subscribe(res => {
+      //  this.card = res;
+     // });
+     this.service.getMovies2('any').then(res=>this.card = res.Search)
   }
 
    
@@ -27,7 +28,12 @@ export class ShearchComponent implements OnInit {
     this.dataSource.filter = filterValue;
   }
 
-  openDialog(): void {
+  buscar(nombre:string){
+    this.service.getMovies2(nombre).then(res=>this.card = res.Search)
+  }
+
+
+  openDialog(imdbID: string): void {
     const dialogRef = this.dialog.open(movies, {
       width: '250px',
       // data: {name: this.name, animal: this.animal}
